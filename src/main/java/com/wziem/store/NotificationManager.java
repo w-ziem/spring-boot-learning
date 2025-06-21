@@ -5,13 +5,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class NotificationManager {
-    private NotificationService service;
+    private final NotificationService service;
 
     public NotificationManager(NotificationService service){
         this.service = service;
     }
 
     public void sendNotification(String message){
+        //logic
         service.send(message);
     }
 
