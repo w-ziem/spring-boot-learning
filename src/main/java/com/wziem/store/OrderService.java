@@ -15,21 +15,18 @@ Spring annotations: for Spring IOC Container
  */
 
 
-@Service
+//@Service
 public class OrderService {
 
     private PaymentService paymentService;
 
-    public OrderService(@Qualifier("stripe") PaymentService paymentService) {
+    public OrderService(PaymentService paymentService) {
         this.paymentService = paymentService;
+        System.out.println("OrderSevice created");
     }
 
     public void placeOrder() {
         paymentService.processPayment(100);
-    }
-
-    public void setPaymentService(@Qualifier("paypal") PaymentService paymentService) {
-        this.paymentService = paymentService;
     }
 
 }

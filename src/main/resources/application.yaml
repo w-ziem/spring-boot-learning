@@ -8,4 +8,6 @@ stripe:
   enabled: true
   supported-currencies: USD,EUR,GBP
 
+payment:
+  provider: paypal
 #you should only use one config file yaml or properties so i should delete other one but ill leave it there for reference

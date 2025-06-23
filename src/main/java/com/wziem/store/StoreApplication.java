@@ -14,6 +14,14 @@ public class StoreApplication {
         var orderService  = context.getBean(OrderService.class);
         orderService.placeOrder();
 
+        //orderService object is created (it's bean) even tho I don't use it - early/eger initialization
+
+
+        var notificationManager = context.getBean(NotificationManager.class);
+        notificationManager.sendNotification("Order placed successfully!");
+
+        var resource = context.getBean(HeavyResource.class);
+
     }
 
 }

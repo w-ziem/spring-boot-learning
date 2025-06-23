@@ -12,8 +12,8 @@ Controlling bean selection:
 - @Qualifier: select a bean by name
  */
 
-@Service("stripe")
-@Primary
+//@Service("stripe")
+//@Primary
 public class StripePaymentService implements PaymentService {
     @Value("${stripe.apiUrl}")
     private String apiUrl;
@@ -35,7 +35,7 @@ public class StripePaymentService implements PaymentService {
         System.out.println("APIURL: " + apiUrl);
         System.out.println("Enabled: " + enabled);
         System.out.println("Timeout: " + timeout);
-        System.out.println("Supported currencies: " + supportedCurrencies);
+        System.out.println("SupportedCurrencies: " + supportedCurrencies);
         System.out.println("Amount: " + amount);
     }
 }
