@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 
 //class for beans creation manually
 @Configuration
@@ -24,7 +25,7 @@ public class AppConfig {
     }
 
     @Bean
-    @Lazy
+//    @Scope("prototype")
     public OrderService orderService(){
         if(paymentProvider.equals("stripe")) {
             return new OrderService(stripe());

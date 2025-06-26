@@ -11,9 +11,9 @@ public class NotificationManager {
         this.service = service;
     }
 
-    public void sendNotification(String message){
+    public void send(String message, String recipient){
         //logic
-        service.send(message);
+        service.send(message, recipient);
     }
 
 }

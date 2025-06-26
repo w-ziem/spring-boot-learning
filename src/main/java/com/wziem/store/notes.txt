@@ -1,0 +1,36 @@
+/*
+Spring annotations: for Spring IOC Container
+- Component: general purpose (utility classes)
+- Service: classes that contain busienss logic
+- Repository: classes that interact with database
+- Controller: marking classes as controllers for handling web requests
+
+ */
+
+ /*
+ Controlling bean selection:
+ - @Primary: if there are multiple beans of the same type, this one will be selected
+ - @Qualifier: select a bean by name
+
+  public OrderService(@Qualifier("stripe") PaymentService paymentService) {
+
+  */
+
+ @Lazy //won't be created until needed
+
+//class for beans creation manually
+@Configuration
+public class AppConfig {
+
+#you should only use one config file yaml or properties so i should delete other one but ill leave it there for reference
+@Value("${stripe.timeout:3000}") // deafult value if not defined in application properties is 3000
+private int timeout;
+
+Bean scopes: @Scope("type")
+- Singleton - only one instance
+- Prototype - new instance created every time I use it
+- Request - lives for the duration of one HTTP request, good for storing request data
+- Sesssion - new bean instance for each HTTP session
+
+@PostConstruct //this method will be called after bean is initializated
+- this is a good moment to initialize everything you need after the creation of a bean - eg. open database/network connection
