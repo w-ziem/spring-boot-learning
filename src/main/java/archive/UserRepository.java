@@ -1,4 +1,4 @@
-package com.wziem.store;
+package archive;
 
 public interface UserRepository {
     public void save(User user);

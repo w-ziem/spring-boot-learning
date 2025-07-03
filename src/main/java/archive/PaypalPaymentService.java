@@ -1,6 +1,4 @@
-package com.wziem.store;
-
-import org.springframework.stereotype.Service;
+package archive;
 
 //@Service("paypal")
 public class PaypalPaymentService implements PaymentService{

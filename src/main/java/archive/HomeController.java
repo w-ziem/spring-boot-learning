@@ -1,4 +1,4 @@
-package com.wziem.store;
+package archive;
 
 
 import org.springframework.beans.factory.annotation.Value;

@@ -7,7 +7,7 @@ create table users
     password varchar(255) null
 );
 
-create table adresses
+create table addresses
 (
     id      bigint auto_increment
         primary key,

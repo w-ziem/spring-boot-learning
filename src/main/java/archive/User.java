@@ -1,4 +1,4 @@
-package com.wziem.store;
+package archive;
 
 
 public class User {

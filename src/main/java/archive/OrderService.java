@@ -1,11 +1,8 @@
-package com.wziem.store;
+package archive;
 
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 
 /*
 Spring annotations: for Spring IOC Container

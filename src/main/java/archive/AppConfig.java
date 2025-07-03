@@ -1,10 +1,8 @@
-package com.wziem.store;
+package archive;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
 
 //class for beans creation manually
 @Configuration
