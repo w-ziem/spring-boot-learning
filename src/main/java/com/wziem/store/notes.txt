@@ -34,3 +34,9 @@ Bean scopes: @Scope("type")
 
 @PostConstruct //this method will be called after bean is initializated
 - this is a good moment to initialize everything you need after the creation of a bean - eg. open database/network connection
+
+
+ON DELETE RESTRICT --prevents from deleting category when its applied to product
+
+
+where the foreign key is - that side is the owner

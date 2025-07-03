@@ -2,6 +2,7 @@ package com.wziem.store;
 
 
 import com.wziem.store.entities.Address;
+import com.wziem.store.entities.Profile;
 import com.wziem.store.entities.Tag;
 import com.wziem.store.entities.User;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -44,8 +45,12 @@ public class StoreApplication {
 //            user.addAddress(address);
 //            System.out.println(user.toString());
 
-            user.addTag("tag");
-            user.addTag("tag1");
+//            user.addTag("tag");
+//            user.addTag("tag1");
+//            System.out.println(user.toString());
+
+            var profile = Profile.builder().user(user).bio("some text").build();
+            user.setProfile(profile);
             System.out.println(user.toString());
 
         }

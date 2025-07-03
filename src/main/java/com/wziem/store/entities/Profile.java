@@ -9,6 +9,7 @@ import java.util.Date;
 
 @Getter
 @Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -31,5 +32,11 @@ public class Profile {
 
     @Column(name = "loyalty_points")
     private Integer LoyaltyPoints;
+
+    @ToString.Exclude
+    @OneToOne
+    @JoinColumn(name = "id") // owner has join column annotation
+    @MapsId //tells hibernate primary and fotrign key is the same
+    private User user;
 
 }
