@@ -2,6 +2,7 @@ package com.wziem.store;
 
 
 import com.wziem.store.entities.Address;
+import com.wziem.store.entities.Tag;
 import com.wziem.store.entities.User;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -38,9 +39,13 @@ public class StoreApplication {
 
 //        ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
             var user = User.builder().name("John").email("<EMAIL>").password("<PASSWORD>").build();
-            var address = Address.builder().state("California").street("321 st.").city("Los Angeles").zip("222-131").build();
+//            var address = Address.builder().state("California").street("321 st.").city("Los Angeles").zip("222-131").build();
+//
+//            user.addAddress(address);
+//            System.out.println(user.toString());
 
-            user.addAddress(address);
+            user.addTag("tag");
+            user.addTag("tag1");
             System.out.println(user.toString());
 
         }
