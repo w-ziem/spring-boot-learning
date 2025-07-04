@@ -1,4 +1,5 @@
-package com.wziem.store.entities;
+package archive;
+
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -6,13 +7,15 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
-@Getter
+
+
 @Setter
-@Entity
-@Table(name = "products")
-public class Product {
+@Getter
+//@Entity
+//@Table(name = "products")
+public class Product_manual {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 

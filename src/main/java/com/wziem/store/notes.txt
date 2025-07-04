@@ -40,3 +40,8 @@ ON DELETE RESTRICT --prevents from deleting category when its applied to product
 
 
 where the foreign key is - that side is the owner
+
+
+Select all occurances: CTRL+SHIFT+ALT+J
+Double SHIFT search menu
+ALT+INSERT: generate menu
