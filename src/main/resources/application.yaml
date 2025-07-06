@@ -7,16 +7,23 @@ spring:
     username: root
     password: wektor
 
-stripe:
-  apiUrl: https://api.stripe.com
-  timeout: 1000
-  enabled: true
-  supported-currencies: USD,EUR,GBP
 
-payment:
-  provider: paypal
-#you should only use one config file yaml or properties so i should delete other one but ill leave it there for reference
+#auto creating databases - for prototypyin, do not use on prod, if the generated db is in a good state, we can create Flyway Init migration
+#jpa:
+#  hibernate:
+#    ddl-auto: create;
 
-email:
-  host: "WZiemstore.pl"
-  port: "127.0.0.1:3001"
+
+#stripe:
+#  apiUrl: https://api.stripe.com
+#  timeout: 1000
+#  enabled: true
+#  supported-currencies: USD,EUR,GBP
+#
+#payment:
+#  provider: paypal
+##you should only use one config file yaml or properties so i should delete other one but ill leave it there for reference
+#
+#email:
+#  host: "WZiemstore.pl"
+#  port: "127.0.0.1:3001"

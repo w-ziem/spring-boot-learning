@@ -5,7 +5,9 @@ import com.wziem.store.entities.Address;
 import com.wziem.store.entities.Profile;
 import com.wziem.store.entities.Tag;
 import com.wziem.store.entities.User;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 
 @SpringBootApplication
@@ -38,7 +40,7 @@ public class StoreApplication {
 //        }
 //        context.close();
 
-//        ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
+        ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
             var user = User.builder().name("John").email("<EMAIL>").password("<PASSWORD>").build();
 //            var address = Address.builder().state("California").street("321 st.").city("Los Angeles").zip("222-131").build();
 //
