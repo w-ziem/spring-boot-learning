@@ -45,3 +45,22 @@ where the foreign key is - that side is the owner
 Select all occurances: CTRL+SHIFT+ALT+J
 Double SHIFT search menu
 ALT+INSERT: generate menu
+
+
+
+
+just like there is a IOC Container for bean entities controlled by Spring there is a
+
+Presistance Container - entities controlled by Hibernate (DB)
+
+after creation (new User()) - transient (temporary)
+after save() - presistent (in db and container)
+when it's done with working with that entity, it's cleared from memory and only stays in db - deatched state
+(no longer tracked by hibertane but has db id, save() can be run on it
+When you run delete() on presistent entity hibernate removes it from databse and it becomes transient (temp)
+
+lifetime of presistance context is called Transactoion:
+transaction - group of operations that fails togehter or succeed together (like creating Order and updating stock of a product)
+
+
+

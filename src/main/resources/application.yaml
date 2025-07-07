@@ -3,9 +3,11 @@ spring:
     name: store
   datasource:
     url: jdbc:mysql://localhost:3306/store?createDatabaseIfNotExist=true
-#  convetion is jdbc:mysql://{PORT}/{DATABASE_NAME}?{queryParameter}
+    #  convetion is jdbc:mysql://{PORT}/{DATABASE_NAME}?{queryParameter}
     username: root
     password: wektor
+  jpa:
+    show-sql: true
 
 
 #auto creating databases - for prototypyin, do not use on prod, if the generated db is in a good state, we can create Flyway Init migration
