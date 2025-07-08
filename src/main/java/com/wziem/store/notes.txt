@@ -63,4 +63,36 @@ lifetime of presistance context is called Transactoion:
 transaction - group of operations that fails togehter or succeed together (like creating Order and updating stock of a product)
 
 
+Eger loading: related objects are immediately loaded (@OneToOne, @ManyToOne = one object on the other side of relation) - use when we always need related data
+Lazy loading: related objects are loaded when accesed (@OneToMany, @ManyToMany) - when relationships are optional or rarely accesed
 
+On @OneToOne only owner can specify fetch strategy
+
+
+
+    @Transactional
+    public void showRelatedEntities(){
+        var profile = profileRepository.findById(3L).orElseThrow();
+        System.out.println(profile.getUser().getEmail());
+        //without the @Transactiol it wont work (LazyLodingInitialozationException) because after 30th line the var profile is detached, there is no presistance context, and Hibertnate dosen't know how to use this variable, so we need to set the whole method to being Transactilanl
+    }
+
+
+
+By default the related entities are not saved/removed together by hibernate (like saving a User dosent save the adress)
+Fix:
+@Relationship(cascade = CasdadeType = ...)
+
+
+Jeżeli jest ManyToMany (join table) to nie ma sensu ani oprhanRemoval - bo nie ma rodzica, są sobie równe, ani cascade REMOVE bo bedzie chcial usunac druga strone.
+Wtedy nalezy po prostu wyczyścić powiązania i hibernate sam usunie. e.g:
+    @Transactional
+    public void removeProduct(){
+        var product = productRepository.findById(1L).orElseThrow();
+        product.getWishlist().forEach((u) -> {
+            u.getWishlist().remove(product); //usuwanie wszystkich powiazan produktu z userami
+            userRepository.save(u);
+        });
+
+        productRepository.delete(product);
+    }

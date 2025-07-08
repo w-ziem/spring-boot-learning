@@ -1,15 +1,15 @@
 package com.wziem.store;
 
 
-import com.wziem.store.entities.Address;
-import com.wziem.store.entities.Profile;
-import com.wziem.store.entities.Tag;
-import com.wziem.store.entities.User;
+import com.wziem.store.entities.*;
 import com.wziem.store.repositories.*;
+import com.wziem.store.services.ProductService;
 import com.wziem.store.services.UserService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+
+import java.math.BigDecimal;
 
 
 @SpringBootApplication
@@ -60,8 +60,15 @@ public class StoreApplication {
  }
 */
         ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
-        var service = context.getBean(UserService.class); //spring creates classes from repository interfaces at runtime
-        service.showEntityStates();
-
+        var userService = context.getBean(UserService.class); //spring creates classes from repository interfaces at runtime
+//        service.showEntityStates();
+//        service.fetchAddress();
+//        service.showRelatedEntities();
+//        service.persistRelated();
+//        service.deleteRelated();
+        var productService = context.getBean(ProductService.class);
+//        productService.createExampleProduct();
+//        userService.fillWishlist();
+        productService.removeProduct();
 
     }}

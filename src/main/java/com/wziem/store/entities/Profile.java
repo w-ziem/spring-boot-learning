@@ -34,7 +34,7 @@ public class Profile {
     private Integer LoyaltyPoints;
 
     @ToString.Exclude
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id") // owner has join column annotation
     @MapsId //tells hibernate primary and fotrign key is the same
     private User user;
