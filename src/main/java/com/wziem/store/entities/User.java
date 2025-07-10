@@ -45,8 +45,8 @@ public class User {
     @Builder.Default
     private Set<Tag> tags = new HashSet<>();
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
-    private Profile profile;
+//    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
+//    private Profile profile;
 
     @ManyToMany()
     @JoinTable(name = "wishlist",
@@ -77,10 +77,10 @@ public class User {
         t.getUsers().remove(this);
     }
 
-    public void addProfile(Profile profile) {
-        this.profile = profile;
-        profile.setUser(this);
-    }
+//    public void addProfile(Profile profile) {
+//        this.profile = profile;
+//        profile.setUser(this);
+//    }
 
     public void addToWishlist(Product product) {
         wishlist.add(product);
