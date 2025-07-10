@@ -102,3 +102,5 @@ When we update data with custom Queries the method calling the one with custom q
 
 when using auto generated queries the return type is importrant if I dont want to get every column, just some -use Getters with interface or fields with class in DTO
 When using @Query annotation just select "p.id, p.name from Product p" etc. instead of "p form Product p"
+
+When working with classes DTOs new com.wziem.store.dtos.ProductSummaryDTO(p.id, p.name) is needed in query - thats wy interfaces better

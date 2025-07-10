@@ -62,5 +62,11 @@ public class UserService {
         productService.getAllProducts().forEach(user::addToWishlist);
     }
 
+    @Transactional
+    public void fetchUser(){
+        var user = userRepository.findByEmail("quba@example.com").orElseThrow();
+        System.out.println(user);
+    }
+
 
 }

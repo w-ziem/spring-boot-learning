@@ -3,13 +3,11 @@ package com.wziem.store.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@ToString
 @Setter
 @Getter
 @AllArgsConstructor
@@ -86,5 +84,13 @@ public class User {
 
     public void addToWishlist(Product product) {
         wishlist.add(product);
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "(" +
+                "id = " + id + ", " +
+                "email = " + email + ", " +
+                "name = " + name + ")";
     }
 }

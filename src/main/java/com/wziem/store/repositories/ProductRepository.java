@@ -55,5 +55,5 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 
 
     @Query("select p.id, p.name from Product p where p.category = :category")
-    List<ProductSummary> findByCategory(@Param("category") Category category);
+    List<ProductSummaryDTO> findByCategory(@Param("category") Category category);
 }
