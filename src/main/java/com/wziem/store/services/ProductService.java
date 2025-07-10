@@ -1,6 +1,7 @@
 package com.wziem.store.services;
 
 
+import com.wziem.store.entities.Category;
 import com.wziem.store.entities.Product;
 import com.wziem.store.repositories.CategoryRepository;
 import com.wziem.store.repositories.ProductRepository;
@@ -46,5 +47,15 @@ public class ProductService {
         });
 
         productRepository.delete(product);
+    }
+
+    @Transactional
+    public void updateProductPrices(){
+        productRepository.updatePriceByCategory(BigDecimal.valueOf(10), (byte) 3);
+    }
+
+    public void fetchProduct(){
+        var products = productRepository.findByCategory(new Category((byte) 3));
+        products.forEach(System.out::println);
     }
 }

@@ -96,3 +96,9 @@ Wtedy nalezy po prostu wyczyścić powiązania i hibernate sam usunie. e.g:
 
         productRepository.delete(product);
     }
+
+
+When we update data with custom Queries the method calling the one with custom query needs to be @Transactional
+
+when using auto generated queries the return type is importrant if I dont want to get every column, just some -use Getters with interface or fields with class in DTO
+When using @Query annotation just select "p.id, p.name from Product p" etc. instead of "p form Product p"

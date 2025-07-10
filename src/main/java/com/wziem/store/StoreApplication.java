@@ -69,6 +69,8 @@ public class StoreApplication {
         var productService = context.getBean(ProductService.class);
 //        productService.createExampleProduct();
 //        userService.fillWishlist();
-        productService.removeProduct();
+//        productService.removeProduct();
+//        productService.updateProductPrices();
+        productService.fetchProduct();
 
     }}
