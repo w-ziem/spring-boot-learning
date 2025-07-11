@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.text.DateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -28,7 +29,7 @@ public class Profile {
     private String phoneNumber;
 
     @Column(name = "date_of_birth")
-    private DateFormat dateOfBirth;
+    private LocalDate dateOfBirth;
 
     @Column(name = "loyalty_points")
     private Integer LoyaltyPoints;

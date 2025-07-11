@@ -71,7 +71,8 @@ public class StoreApplication {
 //        userService.fillWishlist();
 //        productService.removeProduct();
 //        productService.updateProductPrices();
-//        productService.fetchProduct();
-        userService.fetchUsers();
+//        productService.fetchProducts();
+//        userService.fetchUsers();
+        userService.fetchProfiles();
 
     }}

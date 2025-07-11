@@ -54,8 +54,9 @@ public class ProductService {
         productRepository.updatePriceByCategory(BigDecimal.valueOf(10), (byte) 3);
     }
 
-    public void fetchProduct(){
-        var products = productRepository.findByCategory(new Category((byte) 3));
+    @Transactional
+    public void fetchProducts(){
+        var products = productRepository.findProductByPrice(BigDecimal.valueOf(1), BigDecimal.valueOf(15));
         products.forEach(System.out::println);
     }
 }
